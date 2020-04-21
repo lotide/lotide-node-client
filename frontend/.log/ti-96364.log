@@ -1,0 +1,33 @@
+[18:5:45.613] Global cache location '/home/duckonomy/.cache/typescript/3.8', safe file path '/usr/lib/node_modules/typescript/lib/typingSafeList.json', types map path /usr/lib/node_modules/typescript/lib/typesMap.json
+[18:5:45.613] Processing cache location '/home/duckonomy/.cache/typescript/3.8'
+[18:5:45.614] Trying to find '/home/duckonomy/.cache/typescript/3.8/package.json'...
+[18:5:45.614] Loaded content of '/home/duckonomy/.cache/typescript/3.8/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.486"},"devDependencies":{"@types/node":"^13.13.1","@types/ws":"^7.2.4"}}
+[18:5:45.614] Loaded content of '/home/duckonomy/.cache/typescript/3.8/package-lock.json'
+[18:5:45.634] Adding entry into typings cache: 'node' => '/home/duckonomy/.cache/typescript/3.8/node_modules/@types/node/ts3.2/index.d.ts'
+[18:5:45.638] Adding entry into typings cache: 'ws' => '/home/duckonomy/.cache/typescript/3.8/node_modules/@types/ws/index.d.ts'
+[18:5:45.638] Finished processing cache location '/home/duckonomy/.cache/typescript/3.8'
+[18:5:45.639] Process id: 96378
+[18:5:45.639] NPM location: /usr/bin/npm (explicit '--npmLocation' not  provided)
+[18:5:45.639] validateDefaultNpmLocation: false
+[18:5:45.639] Npm config file: /home/duckonomy/.cache/typescript/3.8/package.json
+[18:5:45.639] Updating types-registry npm package...
+[18:5:45.639] Exec: /usr/bin/npm install --ignore-scripts types-registry@latest
+[18:5:47.144]     Succeeded. stdout:
+    + types-registry@0.1.486
+    updated 1 package and audited 4 packages in 0.749s
+found 0 vulnerabilities
+
+
+[18:5:47.144] Updated types-registry npm package
+[18:5:47.196] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.d.ts","/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/duckonomy/Development/Lotide/node/frontend/main.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/duckonomy/Development/Lotide/node/frontend","kind":"discover"}
+[18:5:47.229] Loaded safelist from types map file '/usr/lib/node_modules/typescript/lib/typesMap.json'
+[18:5:47.229] Explicitly included types: []
+[18:5:47.231] Inferred typings from unresolved imports: []
+[18:5:47.231] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/duckonomy/Development/Lotide/node/frontend/bower_components","/home/duckonomy/Development/Lotide/node/frontend/node_modules"]}
+[18:5:47.231] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/duckonomy/Development/Lotide/node/frontend/bower_components","/home/duckonomy/Development/Lotide/node/frontend/node_modules"]}
+[18:5:47.231] DirectoryWatcher:: Added:: WatchInfo: /home/duckonomy/Development/Lotide/node/frontend/bower_components
+[18:5:47.237] DirectoryWatcher:: Added:: WatchInfo: /home/duckonomy/Development/Lotide/node/frontend/node_modules
+[18:5:47.238] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[18:5:47.239] Response has been sent.
+[18:5:47.239] No new typings were requested as a result of typings discovery

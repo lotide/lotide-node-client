@@ -1,0 +1,24 @@
+Info 0    [18:5:45.399] Starting TS Server
+Info 1    [18:5:45.400] Version: 3.8.3
+Info 2    [18:5:45.400] Arguments: /usr/bin/node /usr/bin/tsserver --logFile /home/duckonomy/Development/Lotide/node/frontend/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/84f111f6414e4f46a453f7f2a71b51e8/tscancellation*
+Info 3    [18:5:45.400] Platform: linux NodeVersion: 13 CaseSensitive: true
+Info 4    [18:5:45.412] Search path: /home/duckonomy/Development/Lotide/node/frontend
+Info 5    [18:5:45.413] For info: /home/duckonomy/Development/Lotide/node/frontend/main.js :: No config files found.
+Info 6    [18:5:45.417] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 7    [18:5:46.701] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true Elapsed: 1284ms
+Info 8    [18:5:46.701] Project '/dev/null/inferredProject1*' (Inferred) 
+Info 9    [18:5:46.702] 	Files (6)
+
+Info 10   [18:5:46.702] -----------------------------------------------
+Info 11   [18:5:47.490] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 12   [18:5:47.496] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: false Elapsed: 5ms
+Info 13   [18:5:47.496] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 14   [18:5:47.497] Structure before ensureProjectForOpenFiles:
+Info 15   [18:5:47.498] Structure after ensureProjectForOpenFiles:
+Info 16   [18:5:47.498] got projects updated in background, updating diagnostics for /home/duckonomy/Development/Lotide/node/frontend/main.js
+Info 17   [18:7:19.295] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 18   [18:7:19.325] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: false Elapsed: 30ms
+Info 19   [18:7:19.325] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 20   [18:7:20.464] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 21   [18:7:20.477] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 4 structureChanged: false Elapsed: 13ms
+Info 22   [18:7:20.478] Different program with same set of files:: oldProgram.structureIsReused:: 2
