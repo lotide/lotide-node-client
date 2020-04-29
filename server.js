@@ -3,15 +3,17 @@ const WebSocket = require('ws');
 
 const wss = new WebSocket.Server({ port: 8080 });
 
-function socketAdd(myStr) {
+function socketAdd(myStr, ws) {
   const client = net.createConnection({ port: 8198 }, () => {
 	console.log('connected to server!');
 	client.write(myStr);
   });
 
   client.on('data', (data) => {
+        console.log("From Server");
 	console.log(data.toString());
-	client.end();
+        ws.send(data.toString());
+	// client.end();
   });
 
   client.on('end', () => {
@@ -21,22 +23,20 @@ function socketAdd(myStr) {
 
 wss.on('connection', ws => {
   ws.on('message', message => {
-	if (message == "play") {
-	  socketAdd("play");
-	} else if (message == "stop") {
-	  socketAdd("stop");
-	} else if (message == "close") {
-	  wss.close();
+        let jsonMessage = JSON.parse(message);
+	if (jsonMessage.command == "play") {
+	  socketAdd(message, ws);
+	} else if (jsonMessage.command == "stop") {
+	  socketAdd(message, ws);
+	} else if (jsonMessage.command == "close") {
+	  socketAdd(message, ws);
+          wss.close();
 	} else {
 	  console.log(message);
 	}
   });
-
-  // TODO Should send state structure
-  ws.send('Worked!');
 });
 
 wss.on('close', function() {
   console.log("Websocket Closed");
-  socketAdd("close");
 });

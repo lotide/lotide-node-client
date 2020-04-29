@@ -48,11 +48,15 @@ rl.on('line', function(line) {
   var cmd = removeCommand(line);
   switch(cmd) {
   case "play":
-	socketAdd("play");
+        socketAdd(JSON.stringify({ command: "play", parameters "" }));
 	done();
 	break;
   case "stop":
-	socketAdd("stop");
+        socketAdd(JSON.stringify({ command: "stop", parameters "" }));
+	done();
+	break;
+  case "close":
+        socketAdd(JSON.stringify({ command: "close", parameters "" }));
 	done();
 	break;
   default:
