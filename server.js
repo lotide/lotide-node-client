@@ -10,9 +10,9 @@ function socketAdd(myStr, ws) {
   });
 
   client.on('data', (data) => {
-        console.log("From Server");
+	console.log("From Server");
 	console.log(data.toString());
-        ws.send(data.toString());
+	ws.send(data.toString());
 	// client.end();
   });
 
@@ -23,16 +23,18 @@ function socketAdd(myStr, ws) {
 
 wss.on('connection', ws => {
   ws.on('message', message => {
-        let jsonMessage = JSON.parse(message);
-	if (jsonMessage.command == "play") {
+	let jsonMessage = JSON.parse(message);
+	// if (jsonMessage.command == "play") {
+	//   socketAdd(message, ws);
+	// } else if (jsonMessage.command == "stop") {
+	//   socketAdd(message, ws);
+	// }
+	if (jsonMessage.command == "close") {
 	  socketAdd(message, ws);
-	} else if (jsonMessage.command == "stop") {
-	  socketAdd(message, ws);
-	} else if (jsonMessage.command == "close") {
-	  socketAdd(message, ws);
-          wss.close();
+	  wss.close();
 	} else {
 	  console.log(message);
+	  socketAdd(message, ws);
 	}
   });
 });

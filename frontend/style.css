@@ -1,0 +1,30 @@
+body {
+  overflow: scroll;
+  margin: 0px;
+  padding: 0px;
+}
+
+.panel {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subpanel {
+  width: 100%;
+  height: 40px;
+  background-color: #222432;
+  display: flex;
+  flex-direction: row;
+}
+
+#play-row {
+  width: 100%;
+  height: 20px;
+  background-color: #222432;
+  display: flex;
+  flex-direction: row;
+}

@@ -3,11 +3,31 @@
   <head>
 	<meta charset="UTF-8"/>
 	<title>Document</title>
+	<link href="style.css" rel="stylesheet"/>
   </head>
   <body>
-	<button id="play-button">Play</button>
-	<button id="stop-button">Stop</button>
-	<button id="close-button">Close</button>
+	<div class="panel">
+	  <div class="subpanel">
+		<button id="update-button">Update</button>
+		<button id="play-button">Play</button>
+		<button id="stop-button">Stop</button>
+		<button id="close-button">Close</button>
+
+		<button id="increase-measure-button">Increase Measure</button>
+
+		<button id="set-group-button">Set Group</button>
+		<button id="group-button">Add Group</button>
+		<button id="phrase-button">Add Phrase</button>
+		<button id="synth-button">Add Synth</button>
+		<button id="song-button">Add Song</button>
+	  </div>
+	  <div class="subpanel">
+		<div>hello</div>
+	  </div>
+	  <div id="play-row"></div>
+	</div>
+
+	<div id="my-notes" style="display:flex; flex-direction: column"></div>
 	<script src="main.js"></script>
   </body>
 </html>
