@@ -4,27 +4,227 @@
 	<meta charset="UTF-8"/>
 	<title>Document</title>
 	<link href="style.css" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
   </head>
   <body>
+	<div id="lotide">LoTide</div>
 	<div class="panel">
-	  <div class="subpanel">
-		<button id="update-button">Update</button>
-		<button id="play-button">Play</button>
-		<button id="stop-button">Stop</button>
-		<button id="close-button">Close</button>
+	  <div class="subpanel-upper">
+		<button id="update-button"><i class="fas fa-sync"></i></button>
+		<button id="play-button"><i class="fas fa-play"></i></button>
+		<button id="stop-button"><i class="fas fa-pause"></i></button>
+		<button id="close-button"><i class="fas fa-unlink"></i></button>
 
 		<button id="increase-measure-button">Increase Measure</button>
 
-		<button id="set-group-button">Set Group</button>
 		<button id="group-button">Add Group</button>
+
+		<div id="group-modal" class="modal">
+		  <div class="modal-content">
+			<span id="close0" class="close">&times;</span>
+			<form id="group-form">
+			  <label>Group Name <input id="group-name" type="text"></label>
+			  <br><br>
+			  <button type="submit">Add</button>
+			</form>
+		  </div>
+		</div>
+
 		<button id="phrase-button">Add Phrase</button>
+
+		<div id="phrase-modal" class="modal">
+		  <div class="modal-content">
+			<span id="close2" class="close">&times;</span>
+			<form id="phrase-form">
+			  <label>Phrase Name <input id="phrase-name" type="text"></label>
+			  <br><br>
+			  <button type="submit">Add</button>
+			</form>
+		  </div>
+		</div>
+
 		<button id="synth-button">Add Synth</button>
+
 		<button id="song-button">Add Song</button>
+
+		<div id="song-modal" class="modal">
+		  <div class="modal-content">
+			<span id="close1" class="close">&times;</span>
+			<form id="song-form">
+			  <label>Song Name <input id="song-name" type="text"></label>
+			  <br><br>
+			  <button type="submit">Add</button>
+			</form>
+		  </div>
+		</div>
+	  </div>
+
+	  <div class="subpanel-upper">
+		<div id="selectors">
+		  <div class="selector-container">
+			Groups
+			<div id="group-selector">
+			  <select id="group-selector-select">
+			  </select>
+			</div>
+		  </div>
+
+		  <div class="selector-container">
+			Phrases
+			<div id="phrase-selector">
+			  <select id="phrase-selector-select">
+			  </select>
+			</div>
+		  </div>
+
+		  <div class="selector-container">
+			Synths
+			<div id="synth-selector">
+			  <select id="synth-selector-select">
+			  </select>
+			</div>
+		  </div>
+
+		  <div class="selector-container">
+			Note Sizes
+			<div id="note-size-selector">
+			  <select id="note-size-selector-select">
+				<option value="16">4</option>
+				<option value="8">8</option>
+				<option value="4">16</option>
+				<option value="2">32</option>
+			  </select>
+			</div>
+		  </div>
+
+		  <div class="selector-container">
+			Time Signatures
+			<div id="time-signature-selector">
+			  <select id="time-signature-selector-select">
+				<option value="4">4</option>
+				<option value="3">3</option>
+			  </select>
+			</div>
+		  </div>
+
+		  <div class="selector-container">
+			Modulation Mode
+			<div id="modulation-mode-selector">
+			  <select id="modulation-selector-select">
+				<option value="0">None</option>
+				<option value="1">Mix</option>
+				<option value="2">AM</option>
+				<option value="3">PM</option>
+			  </select>
+			</div>
+		  </div>
+
+		  <div class="selector-container">
+			Oscillator 1 Mode
+			<div id="osc1-mode-selector">
+			  <select id="osc1-selector-select">
+				<option value="0">Sine</option>
+				<option value="1">Saw</option>
+				<option value="2">Square</option>
+				<option value="3">White Noise</option>
+			  </select>
+			</div>
+		  </div>
+
+		  <div class="selector-container">
+			Oscillator 2 Mode
+			<div id="osc2-mode-selector">
+			  <select id="osc2-selector-select">
+				<option value="0">Sine</option>
+				<option value="1">Saw</option>
+				<option value="2">Square</option>
+				<option value="3">White Noise</option>
+			  </select>
+			</div>
+		  </div>
+
+		  <div class="selector-container">
+			Note Size
+			<div id="note-size-selector">
+			  <select id="note-size-selector-select">
+				<option value="0">4</option>
+				<option value="1">8</option>
+				<option value="2">16</option>
+				<option value="3">32</option>
+			  </select>
+			</div>
+		  </div>
+		</div>
 	  </div>
 	  <div class="subpanel">
-		<div>hello</div>
+		<div id="sliders">
+		  <div class="slider-container">
+			Volume
+			<div id="volume-slider">
+			  <input type="range" min="0" max="100" value="50" class="slider" id="volume-slider-range">
+			</div>
+
+		  </div>
+		  <div class="slider-container">
+			Velocity
+			<div id="velocity-slider">
+			  <input type="range" min="1" max="127" value="100" class="slider" id="velocity-slider-range">
+			</div>
+		  </div>
+
+		  <div class="slider-container">
+			BPM
+			<div id="bpm-slider">
+			  <input type="range" min="1" max="300" value="90" class="slider" id="bpm-slider-range">
+			</div>
+		  </div>
+
+		</div>
 	  </div>
-	  <div id="play-row"></div>
+	  <div class="subpanel">
+		<div id="sliders">
+		  <div class="slider-container">
+			Attack
+			<div id="attack-slider">
+			  <input type="range" min="0" max="1" value="0.3" step="0.1" class="slider" id="attack-slider-range">
+			</div>
+		  </div>
+
+		  <div class="slider-container">
+			Sustain
+			<div id="sustain-slider">
+			  <input type="range" min="0" max="1" value="0.3" step="0.1" class="slider" id="sustain-slider-range">
+			</div>
+		  </div>
+
+		  <div class="slider-container">
+			Decay
+			<div id="decay-slider">
+			  <input type="range" min="0" max="1" value="0.3" step="0.1" class="slider" id="decay-slider-range">
+			</div>
+		  </div>
+
+		  <div class="slider-container">
+			Release
+			<div id="release-slider">
+			  <input type="range" min="0" max="1" value="0.3" step="0.1" class="slider" id="release-slider-range">
+			</div>
+		  </div>
+
+		  <div class="slider-container">
+			Offset
+			<div id="offset-slider">
+			  <input type="range" min="0" max="1" value="0.3" step="0.1" class="slider" id="offset-slider-range">
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <!-- <div id="play-row"> -->
+	  <!--	<div id="animate"> -->
+	  <!--	</div> -->
+	  <!-- </div> -->
 	</div>
 
 	<div id="my-notes" style="display:flex; flex-direction: column"></div>

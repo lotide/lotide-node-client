@@ -1,30 +1,178 @@
-body {
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+body, html {
+  font-family: 'Roboto', sans-serif;
   overflow: scroll;
   margin: 0px;
   padding: 0px;
+  background-color: #545971;
+}
+
+#lotide {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: #fff;
+  z-index: 100000;
+  font-size: 40px;
 }
 
 .panel {
+  background-color: #222432;
   position: fixed;
   z-index: 100;
   width: 100%;
-  height: 100px;
+  height: 250px;
   display: flex;
   flex-direction: column;
+  color: #fff;
+}
+
+.selector-container {
+  padding: 5px;
+  text-align: center;
+}
+
+.subpanel-upper {
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.slider-container {
+  text-align: center;
+  padding: 10px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #191B28;
+
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+button {
+  background-color: #191B28;
+  border: none;
+  color: #aaa;
+  padding: 15px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+
+button:hover {
+  color: white;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #3A3E60;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
 }
 
 .subpanel {
   width: 100%;
-  height: 40px;
-  background-color: #222432;
+  height: 60px;
+  /* background-color: #222432; */
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 #play-row {
   width: 100%;
   height: 20px;
   background-color: #222432;
+  position: relative;
   display: flex;
   flex-direction: row;
+}
+
+#sliders {
+  display: flex;
+  flex-direction: row;
+}
+
+#selectors {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 300px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 15%;
+}
+
+#my-notes {
+  position: absolute;
+  margin-top: 250px;
+  background-color: #545971;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#animate {
+  width: 10px;
+  height: 20px;
+  left: 30px;
+  position: absolute;
+  background: red;
 }
