@@ -1,7 +1,30 @@
 "use strict";
 
 const url = 'ws://localhost:8080';
-const connection = new WebSocket(url);
+let connection = new WebSocket(url);
+let loaded = false;
+var stateObj;
+
+connection.onopen = () => {
+	connection.send(JSON.stringify({ command: "load", parameters: ["Song1", "temp.lot"] }));
+};
+
+connection.onerror = (error) => {
+  console.log(`WebSocket error: ${error}`);
+};
+
+connection.onmessage = (e) => {
+	stateObj = JSON.parse(e.data);
+	if (!loaded) {
+		loaded = true;
+		connection.send(JSON.stringify({ command: "setActiveGroup", parameters: ["part1"] }));
+		
+		connection.send(JSON.stringify({ command: "play", parameters: [""] }));
+		drawables[0].stopInstruments();
+	}
+};
+
+let first = true;
 
 let speed = 3;
 
@@ -36,11 +59,29 @@ class Drawable {
 }
 
 class Emitter extends Drawable {
-	constructor(x, y, synthName, color) {
+	constructor(x, y, synthId, hitbox) {
 		super(x, y);
-		this.synthName = synthName;
-		this.color = color;
+		this.synthId = synthId;
 		this.radius = 25;
+		this.hitbox = hitbox;
+	}
+
+	draw(groupName) {
+		super.draw();
+
+		context.globalAlpha = 0.1;
+		let res = this.hitbox.draw();
+		context.globalAlpha = 1.0;
+
+		if (res[0]) {			//enter
+			connection.send(JSON.stringify({ command: "setInstrumentPlay", parameters: [groupName, ""+this.synthId] }));
+		} else if (res[1]) {	//leave
+			connection.send(JSON.stringify({ command: "removeInstrument", parameters: [""+this.synthId] }));
+		}
+	}
+
+	stopInstruments() {
+		connection.send(JSON.stringify({ command: "removeInstrument", parameters: [""+this.synthId] }));
 	}
 }
 
@@ -49,22 +90,50 @@ class Rectangle extends Drawable {
 		super(x, y);
 		this.bx = bx;
 		this.by = by;
+		this.playerInside = false;
 	}
 
 	draw () {
+		this.oldPlayerInside = this.playerInside;
+
+		this.playerInside = this.pointInside(player.x, player.y);
+
 		context.fillStyle = (this.hasOwnProperty("color") ? this.color : "#000000");
 		context.fillRect(this.x, this.y, this.bx, this.by);
+
+		return [this.playerInside && this.oldPlayerInside !== this.playerInside, 
+		(!this.playerInside) && this.oldPlayerInside !== this.playerInside];
 	}
 
 	pointInside(x, y) {
-		return (x >= x && x <= bx && y >= y && y <= by);
+		return (x >= this.x && x <= this.x + this.bx && y >= this.y && y <= this.y + this.by);
 	}
 }
 
-class SynthZone extends Rectangle {
-	constructor(x, y, bx, by, groupName) {
+class GroupZone extends Rectangle {
+	constructor(x, y, bx, by, groupName, emitters, transition) {
 		super(x, y, bx, by);
 		this.groupName = groupName;
+		this.transition = transition;
+
+		this.emitters = emitters;
+
+		this.emitters.forEach(emitter => emitter.color = this.color);
+	}
+
+	stopInstruments() {
+		this.emitters.forEach(emitter => emitter.stopInstruments());
+	}
+
+	draw() {
+		let ret = super.draw();
+
+		if (ret[0] === true) {
+			connection.send(JSON.stringify({ command: "setActiveGroup", parameters: [this.groupName] }));
+			this.stopInstruments();
+		}
+
+		this.emitters.forEach(emitter => emitter.draw(this.groupName));
 	}
 }
 
@@ -140,6 +209,10 @@ $(document).keyup(function(e) {
 		case 40: 	//down
 			keyDown = false;
 			break;
+
+		case 13:
+			connection.send(JSON.stringify({ command: "stop", parameters: [""] }));
+			break;
 	}
 });
 
@@ -147,17 +220,37 @@ function init() {
 	canvas = $('#canvas1')[0];
 	context = canvas.getContext('2d');
 
-	player = new Drawable(canvas.width / 2, canvas.height / 2);
+	player = new Drawable(canvas.width / 2 - 45, canvas.height / 2 - 45);
 	player.radius = 4;
 
-	drawables[0] = new Rectangle(0, 0, canvas.width / 2, canvas.height / 2);
-	drawables[0].color = "#eb9381";
-	drawables[1] = new Rectangle(canvas.width / 2, 0, canvas.width, canvas.height / 2);
-	drawables[1].color = "#83eb81";
-	drawables[2] = new Rectangle(0, canvas.height / 2, 0, canvas.height);
-	drawables[0].color = "#eb81e0";
-	drawables[3] = new Rectangle(canvas.width / 2, canvas.height / 2, canvas.width, canvas.height);
-	drawables[3].color = "#9381eb";	
+	drawables[0] = new GroupZone(0, 0, canvas.width / 2, canvas.height / 2,
+		"part1",
+		[new Emitter(35, 35, 0, new Rectangle(5, 5, 200, 320)),
+		new Emitter(445, 165, 1, new Rectangle(80, 95, 415, 180)),
+		new Emitter(320, 60, 2, new Rectangle(120, 35, 250, 135))],
+		true
+	);
+	drawables[0].color = "#eb81b0";
+	drawables[0].playerInside = true;
+
+
+
+	// drawables[1] = new GroupZone(canvas.width / 2, 0, canvas.width, canvas.height / 2,
+	// 	"part1",
+	// 	[new Emitter(canvas.width / 2 + 100, 15, 0, "#000000"),
+	// 	new Emitter(canvas.width / 2 + 15, 100, 1, "#000000")],
+	// 	true
+	// );
+	// drawables[1].color = "#83eb81";
+	// // drawables[2] = new Rectangle(0, canvas.height / 2, 0, canvas.height);
+	// // drawables[2].color = "#eb81e0";
+	// drawables[2] = new GroupZone(0, canvas.height / 2, canvas.width, canvas.height,
+	// 	"part1",
+	// 	[new Emitter(100, canvas.height / 2 + 15, 0, "#000000"),
+	// 	new Emitter(15, canvas.height / 2 + 100, 1, "#000000")],
+	// 	true
+	// );
+	// drawables[2].color = "#9381eb";
 
 	setInterval(draw, 15);
 }
@@ -170,7 +263,7 @@ function draw() {
 
 	context.clearRect(0, 0, canvas.width, canvas.height);
 
-	if (drawables != undefined && context != undefined) {
+	if (loaded && drawables != undefined && context != undefined) {
 		drawables.forEach(drawable => {
 			if (typeof drawable.draw === "function") {drawable.draw();}
 		});
