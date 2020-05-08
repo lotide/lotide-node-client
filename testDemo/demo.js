@@ -14,7 +14,7 @@ connection.onerror = (error) => {
 };
 
 connection.onmessage = (e) => {
-	stateObj = JSON.parse(e.data);
+	//stateObj = JSON.parse(e.data);
 	if (!loaded) {
 		loaded = true;
 		connection.send(JSON.stringify({ command: "setActiveGroup", parameters: ["part1"] }));
@@ -241,6 +241,16 @@ function init() {
 	);
 	drawables[1].color = "#ebebb0";
 	drawables[1].playerInside = true;
+
+	drawables[2] = new GroupZone(0, canvas.height / 2, canvas.width, canvas.height / 2,
+		"part3",
+		[new Emitter(65, canvas.height / 2 + 85, 0, new Rectangle(35, canvas.height / 2 + 65, 800, 180)),
+		new Emitter(240, canvas.height / 2 + 285, 1, new Rectangle(210, canvas.height / 2 + 125, 450, 240)),
+		new Emitter(430, canvas.height / 2 + 35, 2, new Rectangle(380, canvas.height / 2 + 10, 250, 275))],
+		true
+	);
+	drawables[2].color = "#b081eb";
+	drawables[2].playerInside = true;
 
 
 
