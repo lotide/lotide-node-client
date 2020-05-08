@@ -233,6 +233,15 @@ function init() {
 	drawables[0].color = "#eb81b0";
 	drawables[0].playerInside = true;
 
+	drawables[1] = new GroupZone(canvas.width / 2, 0, canvas.width, canvas.height / 2,
+		"part2",
+		[new Emitter(canvas.width / 2 + 35, 65, 1, new Rectangle(canvas.width / 2 + 5, 35, 400, 180)),
+		new Emitter(canvas.width / 2 + 450, 240, 2, new Rectangle(canvas.width / 2 + 200, 120, 285, 220))],
+		true
+	);
+	drawables[1].color = "#ebebb0";
+	drawables[1].playerInside = true;
+
 
 
 	// drawables[1] = new GroupZone(canvas.width / 2, 0, canvas.width, canvas.height / 2,
