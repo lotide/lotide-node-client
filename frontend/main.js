@@ -48,6 +48,7 @@ const noteSizeSelector = document.getElementById("note-size-selector");
 const timeSignatureSelector = document.getElementById("time-signature-selector");
 
 
+const volumeSlider = document.getElementById("volume-slider-range");
 const bpmSlider = document.getElementById("bpm-slider-range");
 const attackSlider = document.getElementById("attack-slider-range");
 const sustainSlider = document.getElementById("sustain-slider-range");
@@ -125,6 +126,12 @@ modulationSelector.addEventListener('change', (event) => {
 bpmSlider.addEventListener('input', () => {
   connection.send(JSON.stringify({ command: "setLength", parameters: [bpmSlider.value.toString()]}));
 }, false);
+
+
+volumeSlider.addEventListener('input', () => {
+  connection.send(JSON.stringify({ command: "setVolume", parameters: [volumeSlider.value.toString()]}));
+}, false);
+
 
 attackSlider.addEventListener('input', () => {
   connection.send(JSON.stringify({ command: "setAttack", parameters: [attackSlider.value.toString()]}));
@@ -243,6 +250,8 @@ var notes = {C8: 108, B7: 107, As7: 106, A7: 105, Gs7: 104, G7: 103, Fs7: 102, F
 function updateElements(fullLength) {
   let myNotes = document.getElementById("my-notes");
   myNotes.innerHTML = '';
+
+  let volume = document.getElementById("volume-slider-range").value;
   let velocity = document.getElementById("velocity-slider-range").value;
   let noteSize = document.getElementById("note-size-selector-select").value;
   let timeSig = document.getElementById("time-signature-selector-select").value;
