@@ -1592,119 +1592,119 @@
                 "notes": [
                     {
                         "note": 60.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 0,
                         "duration": 32,
                         "id": 201
                     },
                     {
                         "note": 58.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 32,
                         "duration": 32,
                         "id": 202
                     },
                     {
                         "note": 57.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 64,
                         "duration": 32,
                         "id": 203
                     },
                     {
                         "note": 56.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 96,
                         "duration": 32,
                         "id": 204
                     },
                     {
                         "note": 57.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 128,
                         "duration": 32,
                         "id": 205
                     },
                     {
                         "note": 56.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 160,
                         "duration": 32,
                         "id": 206
                     },
                     {
                         "note": 55.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 192,
                         "duration": 32,
                         "id": 207
                     },
                     {
                         "note": 66.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 224,
                         "duration": 32,
                         "id": 208
                     },
                     {
                         "note": 74.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 256,
                         "duration": 32,
                         "id": 209
                     },
                     {
                         "note": 79.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 288,
                         "duration": 16,
                         "id": 210
                     },
                     {
                         "note": 77.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 304,
                         "duration": 16,
                         "id": 211
                     },
                     {
                         "note": 76.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 320,
                         "duration": 32,
                         "id": 212
                     },
                     {
                         "note": 69.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 352,
                         "duration": 32,
                         "id": 213
                     },
                     {
                         "note": 74.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 384,
                         "duration": 32,
                         "id": 214
                     },
                     {
                         "note": 61.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 416,
                         "duration": 32,
                         "id": 215
                     },
                     {
                         "note": 60.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 448,
                         "duration": 32,
                         "id": 216
                     },
                     {
                         "note": 60.0,
-                        "velocity": 100.0,
+                        "velocity": 20.0,
                         "startTime": 480,
                         "duration": 32,
                         "id": 217
@@ -1927,196 +1927,196 @@
                 "notes": [
                     {
                         "note": 38.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 0,
                         "duration": 6,
                         "id": 246
                     },
                     {
                         "note": 45.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 6,
                         "duration": 6,
                         "id": 247
                     },
                     {
                         "note": 50.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 12,
                         "duration": 8,
                         "id": 248
                     },
                     {
                         "note": 38.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 20,
                         "duration": 4,
                         "id": 249
                     },
                     {
                         "note": 45.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 24,
                         "duration": 4,
                         "id": 250
                     },
                     {
                         "note": 38.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 28,
                         "duration": 2,
                         "id": 251
                     },
                     {
                         "note": 51.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 30,
                         "duration": 2,
                         "id": 252
                     },
                     {
                         "note": 40.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 32,
                         "duration": 6,
                         "id": 253
                     },
                     {
                         "note": 47.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 38,
                         "duration": 6,
                         "id": 254
                     },
                     {
                         "note": 52.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 44,
                         "duration": 8,
                         "id": 255
                     },
                     {
                         "note": 40.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 52,
                         "duration": 4,
                         "id": 256
                     },
                     {
                         "note": 47.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 56,
                         "duration": 4,
                         "id": 257
                     },
                     {
                         "note": 31.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 60,
                         "duration": 2,
                         "id": 258
                     },
                     {
                         "note": 32.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 62,
                         "duration": 2,
                         "id": 259
                     },
                     {
                         "note": 33.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 64,
                         "duration": 6,
                         "id": 260
                     },
                     {
                         "note": 40.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 70,
                         "duration": 6,
                         "id": 261
                     },
                     {
                         "note": 45.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 76,
                         "duration": 8,
                         "id": 262
                     },
                     {
                         "note": 33.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 84,
                         "duration": 4,
                         "id": 263
                     },
                     {
                         "note": 40.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 88,
                         "duration": 4,
                         "id": 264
                     },
                     {
                         "note": 31.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 92,
                         "duration": 2,
                         "id": 265
                     },
                     {
                         "note": 32.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 94,
                         "duration": 2,
                         "id": 266
                     },
                     {
                         "note": 33.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 96,
                         "duration": 6,
                         "id": 267
                     },
                     {
                         "note": 40.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 102,
                         "duration": 6,
                         "id": 268
                     },
                     {
                         "note": 46.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 106,
                         "duration": 2,
                         "id": 269
                     },
                     {
                         "note": 47.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 108,
                         "duration": 8,
                         "id": 270
                     },
                     {
                         "note": 45.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 116,
                         "duration": 4,
                         "id": 271
                     },
                     {
                         "note": 40.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 120,
                         "duration": 4,
                         "id": 272
                     },
                     {
                         "note": 39.0,
-                        "velocity": 44.0,
+                        "velocity": 20.0,
                         "startTime": 124,
                         "duration": 4,
                         "id": 273
