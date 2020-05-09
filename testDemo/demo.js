@@ -130,6 +130,7 @@ class GroupZone extends Rectangle {
 
 		if (ret[0] === true) {
 			connection.send(JSON.stringify({ command: "setActiveGroup", parameters: [this.groupName] }));
+			connection.send(JSON.stringify({ command: "setTempo", parameters: [""+this.tempo] }));
 			this.stopInstruments();
 		}
 
@@ -232,6 +233,7 @@ function init() {
 	);
 	drawables[0].color = "#eb81b0";
 	drawables[0].playerInside = true;
+	drawables[0].tempo = 138;
 
 	drawables[1] = new GroupZone(canvas.width / 2, 0, canvas.width, canvas.height / 2,
 		"part2",
@@ -241,6 +243,7 @@ function init() {
 	);
 	drawables[1].color = "#ebebb0";
 	drawables[1].playerInside = true;
+	drawables[1].tempo = 122;
 
 	drawables[2] = new GroupZone(0, canvas.height / 2, canvas.width, canvas.height / 2,
 		"part3",
@@ -251,6 +254,7 @@ function init() {
 	);
 	drawables[2].color = "#b081eb";
 	drawables[2].playerInside = true;
+	drawables[2].tempo = 110;
 
 
 
