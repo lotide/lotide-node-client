@@ -9,7 +9,7 @@ body, html {
 }
 
 #lotide {
-  position: absolute;
+  position: fixed;
   left: 15px;
   top: 15px;
   color: #fff;
